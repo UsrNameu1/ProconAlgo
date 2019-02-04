@@ -32,7 +32,6 @@
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
             "environment": [],
-            "processId": "${command.pickProcess}",
             "externalConsole": false,
             "linux": {
                 "MIMode": "gdb"
