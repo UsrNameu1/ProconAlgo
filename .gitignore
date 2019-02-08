@@ -36,4 +36,5 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 build/
-bin/
+bin/*
+!bin/.gitkeep
