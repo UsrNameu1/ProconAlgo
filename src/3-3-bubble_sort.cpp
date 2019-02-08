@@ -2,8 +2,8 @@
 using namespace std;
 
 int bubbleSort(int A[], int N) {
-    int sw = 0;
-    bool flag = true;
+    auto sw = 0;
+    auto flag = true;
     for(int i = 0; flag; i++)
     {
         flag = false;

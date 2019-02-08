@@ -24,7 +24,7 @@ public:
 
 int main() {
     int a, b;
-    Stack<int>* stack = new Stack<int>;
+    auto* stack = new Stack<int>;
     char s[100];
 
     while( scanf("%s", s) != EOF) {

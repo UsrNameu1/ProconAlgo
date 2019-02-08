@@ -12,7 +12,7 @@ void bubble(struct Card A[], int N) {
         for(int j = N -1; j >= i; j--)
         {
             if (A[j].value < A[j - 1].value) {
-                Card t = A[j];
+                auto t = A[j];
                 A[j] = A[j - 1];
                 A[j - 1] = t;
             }
@@ -23,14 +23,14 @@ void bubble(struct Card A[], int N) {
 void selection(struct Card A[], int N) {
     for(int i = 0; i < N; i++)
     {
-        int minj = i;
+        auto minj = i;
         for(int j = i; j < N; j++)
         {
             if (A[j].value < A[minj].value) {
                 minj = j;
             }            
         }
-        Card t = A[i];
+        auto t = A[i];
         A[i] = A[minj];
         A[minj] = t;
     }
@@ -78,7 +78,7 @@ int main() {
     cout << "Stable" << endl;
 
     print(C2, N);
-    string stableStr = isStable(C1, C2, N) ? "Stable" : "Not Stable";
+    auto stableStr = isStable(C1, C2, N) ? "Stable" : "Not Stable";
     cout << stableStr << endl;
 
     return 0;

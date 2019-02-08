@@ -13,8 +13,8 @@ vector<int> G;
 
 void insertionSort(int A[], int n, int g) {
     for (int i = g; i < n; i++) {
-        int v = A[i];
-        int j = i - g;
+        auto v = A[i];
+        auto j = i - g;
         while(j >= 0 && A[j] > v) {
             A[j + g] = A[j];
             j -= g;
