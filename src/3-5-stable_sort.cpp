@@ -78,7 +78,7 @@ int main() {
     cout << "Stable" << endl;
 
     print(C2, N);
-    auto stableStr = isStable(C1, C2, N) ? "Stable" : "Not Stable";
+    auto stableStr = isStable(C1, C2, N) ? "Stable" : "Not stable";
     cout << stableStr << endl;
 
     return 0;
