@@ -16,9 +16,8 @@ public:
     T storage[LEN];
     int head, tail;
 
-    Queue(int n) {
-        head = 1;
-        tail = n + 1;
+    Queue() {
+        head = tail = 1;
     }
 
     void enqueue(T x) {
@@ -35,15 +34,18 @@ public:
 
 int main() {
     int elaps = 0, c;
-    int i, q, n;
+    int i, q, n, t;
+    char name[100];
     Process u;
     scanf("%d %d", &n, &q);
 
-    auto* queue = new Queue<Process>(n);
+    auto* queue = new Queue<Process>;
     for( i = 1; i <= n; i++)
     {
-        scanf("%s", queue->storage[i].name);
-        scanf("%d", &(queue->storage[i].t));
+        Process *p = new Process;
+        scanf("%s", p->name);
+        scanf("%d", &(p->t));
+        queue->enqueue(*p);
     }
     
     while( queue->head != queue->tail ) {
