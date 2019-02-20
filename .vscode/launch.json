@@ -6,8 +6,11 @@
             "type": "cppdbg",
             "request": "launch",
             "targetArchitecture": "x64",
-            "program": "${workspaceRoot}/${fileBasenameNoExtension}",
-            "args": [],
+            "program": "${workspaceRoot}/bin/${fileBasenameNoExtension}",
+            "args": [
+                "<",
+                "./inputs/${fileBasenameNoExtension}.in"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
             "environment": [],
@@ -27,12 +30,12 @@
             "type": "cppdbg",
             "request": "launch",
             "targetArchitecture": "x64",
-            "program": "${workspaceRoot}/${fileBasenameNoExtension}",
+            "program": "${workspaceRoot}/bin/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
             "environment": [],
-            "externalConsole": false,
+            "externalConsole": true,
             "linux": {
                 "MIMode": "gdb"
             },
