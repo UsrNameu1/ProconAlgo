@@ -22,7 +22,7 @@ void countingSort(u_short A[], u_short Bucket[], int k, int size) {
     }
 
     for (j = 0; j < size; j++) {
-        Bucket[Count[A[j]]] = A[j];
+        Bucket[Count[A[j]] - 1] = A[j];
         Count[A[j]] -= 1;
     }
 }
@@ -41,8 +41,8 @@ int main() {
     
     countingSort(In, Out, MAX_ELEM, N);
 
-    for (i = 1; i <= N; i++) {
-        if (i > 1) {
+    for (i = 0; i < N; i++) {
+        if (i > 0) {
             cout << " ";
         }
         cout << Out[i];
