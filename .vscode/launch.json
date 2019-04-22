@@ -8,6 +8,7 @@
             "targetArchitecture": "x64",
             "program": "${workspaceRoot}/bin/${fileBasenameNoExtension}",
             "args": [
+                "-Wc++11-extensions",
                 "<",
                 "./inputs/${fileBasenameNoExtension}.in"
             ],
@@ -31,7 +32,9 @@
             "request": "launch",
             "targetArchitecture": "x64",
             "program": "${workspaceRoot}/bin/${fileBasenameNoExtension}",
-            "args": [],
+            "args": [
+                "-Wc++11-extensions"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
             "environment": [],
