@@ -18,11 +18,11 @@ int costToSort(u_short In[], u_short Sorted[], u_short size) {
 
     for (i = 0; i < size; i++)
     {
-        u_short elem = In[i];
-        u_short cycle_min = elem;
+        auto elem = In[i];
+        auto cycle_min = elem;
         int cycle_sum = elem;
         u_short cycle_size = 1;
-        int cycle_idx = i;
+        auto cycle_idx = i;
 
         if (visited[cycle_idx])
             continue;
@@ -62,7 +62,7 @@ int main() {
 
     sort(B, B + N);
 
-    int cost = costToSort(A, B, N);
+    auto cost = costToSort(A, B, N);
 
     cout << cost;
     cout << endl;
