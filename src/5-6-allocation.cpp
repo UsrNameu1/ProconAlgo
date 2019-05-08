@@ -1,7 +1,9 @@
 #include<iostream>
+#include<memory>
 using namespace std;
 
 typedef long long llong;
+
 
 class MinimumCapacitySolver {
 
@@ -56,6 +58,7 @@ private:
     int trackCnt;
 };
 
+
 int main() {
     int cargoCnt, trackCnt;
     llong cargoWeights[MinimumCapacitySolver::MAX];
@@ -64,7 +67,7 @@ int main() {
     for (int i = 0; i < cargoCnt; i++) {
         cin >> cargoWeights[i];
     }   
-    auto *solver = new MinimumCapacitySolver(cargoCnt, trackCnt, cargoWeights);
+    unique_ptr<MinimumCapacitySolver> solver(new MinimumCapacitySolver(cargoCnt, trackCnt, cargoWeights));
 
     llong ans = solver->solve();
     cout << ans << endl;

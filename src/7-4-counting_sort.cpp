@@ -50,5 +50,8 @@ int main() {
 
     cout << endl;
 
+    free(In);
+    free(Out);
+
     return 0;
 }

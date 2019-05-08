@@ -1,6 +1,8 @@
 #include<cstdio>
 #include<cstdlib>
 #include<cstring>
+#include<memory>
+using namespace std;
 
 struct Node
 {
@@ -84,7 +86,7 @@ int main() {
     char command[20];
     scanf("%d", &n);
     
-    auto* list = new LinkedList;
+    unique_ptr<LinkedList> list(new LinkedList);
     for(i = 0; i < n; i++) {
         scanf("%s%d", command, &key);
         if (strcmp(command, "insert") == 0) {
@@ -99,6 +101,4 @@ int main() {
     }
 
     list->printList();
-
-    return 0;
 }

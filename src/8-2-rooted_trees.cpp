@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 using namespace std;
 
 
@@ -27,7 +28,7 @@ public:
     }
 
     ~RootedTree() {
-        delete nodes;
+        free(nodes);
     }
 
     void push_values(int id, int childCnt, int childIds[]) {
@@ -91,20 +92,18 @@ int main() {
 
     cin >> N;
 
-    RootedTree tree = RootedTree(N);
+    unique_ptr<RootedTree> tree(new RootedTree(N));
 
     for (i = 0; i < N; i++) {
         cin >> id >> deg;
         int childIds[deg];
         for (j = 0; j < deg; j++)
             cin >> childIds[j];
-        tree.push_values(id, deg, childIds);
+        tree->push_values(id, deg, childIds);
     }
 
     for (i = 0; i < N; i++) {
-        tree.printNode(i);
+        tree->printNode(i);
         cout << endl;
     }
-
-    return 0;
 }

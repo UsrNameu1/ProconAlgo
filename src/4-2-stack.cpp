@@ -1,6 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<memory>
+using namespace std;
+
 
 template <typename T>
 class Stack {
@@ -24,10 +27,10 @@ public:
 
 int main() {
     int a, b;
-    auto* stack = new Stack<int>;
+    unique_ptr<Stack<int>> stack(new Stack<int>);
     char s[100];
 
-    while( scanf("%s", s) != EOF) {
+    while(scanf("%s", s) != EOF) {
         if (s[0] == '+') {
             a = stack->pop();
             b = stack->pop();
@@ -46,6 +49,4 @@ int main() {
     }
 
     printf("%d\n", stack->pop());
-
-    return 0;
 }

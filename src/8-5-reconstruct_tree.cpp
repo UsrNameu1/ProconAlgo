@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 using namespace std;
 
 
@@ -68,17 +69,18 @@ int main() {
         cin >> inorderIds[i];
     }
 
-    auto reconstructor = PostorderReconstructor(preorderIds, inorderIds, N);
+    unique_ptr<PostorderReconstructor> reconstructor(new PostorderReconstructor(preorderIds, inorderIds, N));
 
-    reconstructor.reconstruct(0, N);
+    reconstructor->reconstruct(0, N);
 
     for (i = 0; i < N; i++)
     {
         if (i > 0)
             cout << " ";
 
-        cout << reconstructor.postIds[i];
+        cout << reconstructor->postIds[i];
     }
-    cout << endl;
     
+    cout << endl;
+
 }

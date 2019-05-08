@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 using namespace std;
 
 
@@ -25,7 +26,7 @@ public:
     }
 
     ~BinaryTree() {
-        delete nodes;
+        free(nodes);
     }
 
     void push_values(int id, int leftId, int rightId) {
@@ -119,17 +120,15 @@ int main() {
 
     cin >> N;
 
-    BinaryTree tree = BinaryTree(N);
+    unique_ptr<BinaryTree> tree(new BinaryTree(N));
 
     for (i = 0; i < N; i++) {
         cin >> id >> leftId >> rightId;
-        tree.push_values(id, leftId, rightId);
+        tree->push_values(id, leftId, rightId);
     }
 
     for (i = 0; i < N; i++) {
-        tree.printNode(i);
+        tree->printNode(i);
         cout << endl;
     }
-
-    return 0;
 }

@@ -1,5 +1,8 @@
 #include<stdio.h>
 #include<string.h>
+#include<memory>
+using namespace std;
+
 
 class ATGCHashSet {
 public:
@@ -69,7 +72,7 @@ private:
 int main() {
     int i, n, h;
     char str[ATGCHashSet::STR_LENGTH], com[9];
-    auto *table = new ATGCHashSet();
+    unique_ptr<ATGCHashSet> table(new ATGCHashSet());
 
     scanf("%d", &n);
 

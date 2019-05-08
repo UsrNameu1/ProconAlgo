@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<algorithm>
+#include<memory>
 using namespace std;
 
 static const int LEN = 100005;
@@ -39,7 +40,7 @@ int main() {
     Process u;
     scanf("%d %d", &n, &q);
 
-    auto* queue = new Queue<Process>;
+    unique_ptr<Queue<Process>> queue(new Queue<Process>);
     for( i = 1; i <= n; i++)
     {
         Process *p = new Process;
@@ -60,6 +61,4 @@ int main() {
             printf("%s %d\n", u.name, elaps);
         }
     }
-
-    return 0;
 }
